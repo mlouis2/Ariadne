@@ -1,4 +1,4 @@
-const WALL_SIZE = 10;
+const WALL_SIZE = 5;
 const CELL_SIZE = 100;
 
 class Cell {
@@ -35,16 +35,16 @@ class Cell {
           return this.col > otherCell.col;
      }
      draw(x, y) {
-          if (hasTopWall) {
+          if (this.hasTopWall) {
                ctx.fillRect(x, y, CELL_SIZE, WALL_SIZE);
           }
-          if (hasRightWall) {
+          if (this.hasRightWall) {
                ctx.fillRect(x + (CELL_SIZE - WALL_SIZE), y, WALL_SIZE, CELL_SIZE);
           }
-          if (hasBottomWall) {
+          if (this.hasBottomWall) {
                ctx.fillRect(x, y + (CELL_SIZE - WALL_SIZE), CELL_SIZE, WALL_SIZE);
           }
-          if (hasLeftWall) {
+          if (this.hasLeftWall) {
                ctx.fillRect(x, y, WALL_SIZE, CELL_SIZE);
           }
       }
