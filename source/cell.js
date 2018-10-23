@@ -1,5 +1,5 @@
 const WALL_SIZE = 5;
-const CELL_SIZE = 70;
+const CELL_SIZE = 100;
 
 class Cell {
      constructor(row, col, topWall, rightWall, bottomWall, leftWall) {
@@ -35,6 +35,7 @@ class Cell {
           return this.col > otherCell.col;
      }
      draw(x, y) {
+          ctx.drawImage(floorImage, x, y, CELL_SIZE, CELL_SIZE);
           if (this.hasTopWall) {
                ctx.fillRect(x, y, CELL_SIZE, WALL_SIZE);
           }

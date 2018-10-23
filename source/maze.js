@@ -1,18 +1,10 @@
 const NUM_CHUNKS_WIDE = screen.width / CHUNK_SIZE_IN_PIXELS;
 const NUM_CHUNKS_HIGH = screen.height / CHUNK_SIZE_IN_PIXELS;
-//[1][2][3]
-//[4][5][6]
-//[7][8][9]
-
-//[2][3][10]
-//[5][6][11]
-//[8][9][12]
 
 
 
 class Maze {
      constructor() {
-          // this.baseChunk = new Chunk(null, null, null, null);
           this.currentChunks = [[]];
           this.initiateCurrentChunks();
           this.baseChunk = this.currentChunks[Math.floor(this.currentChunks.length / 2)][Math.floor(this.currentChunks[0].length / 2)];
@@ -27,8 +19,6 @@ class Maze {
           for (let row = 0; row < NUM_CHUNKS_HIGH; row++) {
                for (let col = 0; col < NUM_CHUNKS_WIDE; col++) {
                     if (row - 1 > -1) {
-                         console.log("row is " + row);
-                         console.log("col is " + col);
                          this.currentChunks[row][col].north = this.currentChunks[row - 1][col];
                     }
                     if (row + 1 <= NUM_CHUNKS_HIGH - 1) {
