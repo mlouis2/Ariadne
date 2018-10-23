@@ -1,5 +1,5 @@
 const WALL_SIZE = 5;
-const CELL_SIZE = 100;
+const CELL_SIZE = 70;
 
 class Cell {
      constructor(row, col, topWall, rightWall, bottomWall, leftWall) {

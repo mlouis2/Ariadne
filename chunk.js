@@ -15,9 +15,9 @@ class Chunk {
           this.createMaze();
      }
      initiateEmptyCells() {
-          for (let row = 0; row < this.chunkSize; row++) {
+          for (let row = 0; row < CHUNK_SIZE; row++) {
                this.cells[row] = [];
-               for (let col = 0; col < this.chunkSize; col++) {
+               for (let col = 0; col < CHUNK_SIZE; col++) {
                     this.cells[row][col] = new Cell(row, col, true, true, true, true);
                }
           }
@@ -45,8 +45,8 @@ class Chunk {
           }
      }
      getUntouchedCell() {
-          for (let row = 0; row < this.chunkSize; row++) {
-               for (let col = 0; col < this.chunkSize; col++) {
+          for (let row = 0; row < CHUNK_SIZE; row++) {
+               for (let col = 0; col < CHUNK_SIZE; col++) {
                     if (this.cells[row][col].isUntouched) {
                          return this.cells[row][col];
                     }
@@ -114,8 +114,8 @@ class Chunk {
           b.isUntouched = false;
      }
      draw(x, y) {
-          for (let row = 0; row < this.chunkSize; row++) {
-               for (let col = 0; col < this.chunkSize; col++) {
+          for (let row = 0; row < CHUNK_SIZE; row++) {
+               for (let col = 0; col < CHUNK_SIZE; col++) {
                     this.cells[row][col].draw(x + (CELL_SIZE * col), y + (CELL_SIZE * row));
                }
           }
